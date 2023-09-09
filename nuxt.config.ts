@@ -1,0 +1,13 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+    devtools: { enabled: true },
+    build: {
+        transpile: ['vue-toastification'],
+    },
+    modules: ['@nuxtjs/eslint-module', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt'],
+    runtimeConfig: {
+        public: {
+            api: process.env.API_URL,
+        },
+    },
+});
