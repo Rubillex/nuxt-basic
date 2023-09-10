@@ -13,7 +13,7 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/eslint-config": "^12.0.0",
     "@rushstack/eslint-patch": "^1.2.0",
-    "@typescript-eslint/parser": "^5.59.2",
+    "@typescript-eslint/parser": "^5.62.0",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -22,11 +22,12 @@
     "sass": "^1.66.1"
   },
   "dependencies": {
+    "@nuxt/image": "^1.0.0-rc.1",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
     "@pinia/nuxt": "^0.4.11",
-    "@typescript-eslint/eslint-plugin": "^6.6.0",
+    "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@vueuse/core": "^10.4.1",
     "pinia": "^2.1.6",
     "pinia-plugin-persistedstate": "^3.2.0",
