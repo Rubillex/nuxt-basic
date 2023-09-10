@@ -10,7 +10,7 @@ export default defineNuxtPlugin((nuxtApp) => {
                 }, 500);
             }
 
-            const startTilt = (e: MouseEvent) => {
+            const startTilt = () => {
                 setTransition();
             };
 
