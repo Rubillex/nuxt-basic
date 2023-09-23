@@ -10,4 +10,13 @@ export default defineNuxtConfig({
             api: process.env.API_URL,
         },
     },
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@import "@/assets/styles/collection/index.scss";',
+                },
+            },
+        },
+    },
 });

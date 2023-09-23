@@ -1,0 +1,4 @@
+@function pxToRem($font-size) {
+  $remValue: calc($font-size / 16) + rem;
+  @return $remValue;
+}
