@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     build: {
         transpile: ['vue-toastification'],
     },
-    modules: ['@nuxtjs/eslint-module', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', 'frog-modal'],
+    modules: ['@nuxtjs/eslint-module', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', 'frog-modal', '@nuxtjs/google-fonts'],
     runtimeConfig: {
         public: {
             api: process.env.API_URL,
