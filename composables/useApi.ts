@@ -24,7 +24,9 @@ export function useApi<T>(url: string, options: UseFetchOptions<T> = {}) {
         onResponseError(_ctx) {
             if (_ctx.response.status === 401) {
                 // Область для вызова запроса на обновление токена
+                /* eslint-disable no-console */
                 console.log(refreshToken);
+                /* eslint-enable no-console */
             }
         },
     };

@@ -1,0 +1,14 @@
+version: "3"
+services:
+
+  # Nuxt NODE process
+  nuxt-basic-frontend:
+    container_name: nuxt-basic-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nuxt-basic-frontend
+    ports:
+      - "${PORT:-3000}:3000"
+    environment:
+      NODE_ENV: production
