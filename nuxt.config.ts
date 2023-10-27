@@ -4,7 +4,17 @@ export default defineNuxtConfig({
     build: {
         transpile: ['vue-toastification'],
     },
-    modules: ['@nuxtjs/eslint-module', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', 'frog-modal', '@nuxtjs/google-fonts'],
+    modules: [
+        '@nuxtjs/eslint-module',
+        '@pinia/nuxt',
+        '@nuxt/image',
+        '@pinia-plugin-persistedstate/nuxt',
+        'frog-modal',
+        '@nuxtjs/google-fonts',
+    ],
+    piniaPersistedstate: {
+        storage: 'localStorage', // 'localStorage', 'sessionStorage' or 'cookies'
+    },
     runtimeConfig: {
         public: {
             api: process.env.API_URL,
