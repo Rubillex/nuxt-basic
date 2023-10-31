@@ -16,6 +16,7 @@
     "@nuxtjs/google-fonts": "^3.0.2",
     "@rushstack/eslint-patch": "^1.2.0",
     "@typescript-eslint/parser": "^5.62.0",
+    "dayjs-nuxt": "^2.1.9",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^4.2.1",

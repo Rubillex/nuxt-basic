@@ -51,3 +51,7 @@ defineRule('max', (value: string, [limit]: [limit: number]) => {
     }
     return true;
 });
+
+defineRule('date_format', (value: string, [format]: [format: string]) => {
+    return dayjs(value, format).format(format) === value ? true : `Дата должна соответствовать формату ${format}`;
+});

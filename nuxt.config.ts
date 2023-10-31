@@ -10,6 +10,7 @@ export default defineNuxtConfig({
         '@nuxt/image',
         '@pinia-plugin-persistedstate/nuxt',
         'frog-modal',
+        'dayjs-nuxt',
         '@nuxtjs/google-fonts',
     ],
     piniaPersistedstate: {
