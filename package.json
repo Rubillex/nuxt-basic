@@ -31,6 +31,7 @@
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@vueuse/core": "^10.4.1",
     "frog-modal": "^1.0.9",
+    "maska": "^2.1.10",
     "pinia": "^2.1.6",
     "pinia-plugin-persistedstate": "^3.2.0",
     "vee-validate": "^4.11.3",
