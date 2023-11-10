@@ -3,25 +3,31 @@
 @use "./colors" as colors;
 
 @mixin font-load($ff, $fw, $fs, $fd, $src...) {
-  font-family: $ff;
-  src: $src;
-  font-weight: $fw;
-  font-style: $fs;
-  font-display: $fd;
+    font-family: $ff;
+    src: $src;
+    font-weight: $fw;
+    font-style: $fs;
+    font-display: $fd;
 }
 
 @mixin font($name, $weight, $size, $color, $height, $style) {
-  font-family: $name;
-  font-style: $style;
-  font-weight: $weight;
-  font-size: functions.pxToRem($size);
-  color: $color;
+    font-family: $name;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: functions.pxToRem($size);
+    color: $color;
 
-  @if $height != 1 {
-    line-height: calc($height / $size);
-  }
+    @if $height != 1 {
+        line-height: calc($height / $size);
+    }
 }
 
 @mixin mainFont($weight, $size, $color: null, $height: 1, $style: normal) {
-  @include font(fonts.$mainFont, $weight, $size, $color, $height, $style);
+    @include font(fonts.$mainFont, $weight, $size, $color, $height, $style);
+}
+
+@mixin fillFullColor($color: null) {
+    background: $color;
+    box-shadow: 0 0 0 100vmax $color;
+    clip-path: inset(0 -100vmax);
 }
