@@ -1,37 +1,49 @@
 // --- Composable для отправки запросов к апи --- //
 
+import type { UseFetchOptions } from '#app';
 import { defu } from 'defu';
-import { UseFetchOptions } from '#app';
 import { UserTokens } from '~/utils/enums/user/UserTokens';
 
-export function useApi<T>(url: string, options: UseFetchOptions<T> = {}) {
+export function useApi<T>(url: string, requestOptions: UseFetchOptions<T> = {}) {
+    const config = useRuntimeConfig();
     const accessToken = useCookie(UserTokens.ACCESS);
     const refreshToken = useCookie(UserTokens.REFRESH);
-
-    // Инициализация стейта, необходимого для доступа к переменным, описанным в .env файле
-    const config = useRuntimeConfig();
-
-    // Объект для описания заголовков запросов
-    const headers = {};
 
     const defaults: UseFetchOptions<T> = {
         baseURL: config.public.api,
         key: url,
-        headers: accessToken.value ? { ...headers, Authorization: '' } : headers,
-        onResponse(_ctx) {
-            // Область для
+        server: false,
+        retry: 2,
+        retryStatusCodes: [401],
+        retryDelay: 500, // can safely delete this
+
+        onRequest({ options }) {
+            const headers = new Headers(options.headers);
+            headers.set('Authorization', 'Bearer ' + accessToken.value);
+
+            options.headers = headers;
         },
-        onResponseError(_ctx) {
-            if (_ctx.response.status === 401) {
-                // Область для вызова запроса на обновление токена
-                /* eslint-disable no-console */
-                console.log(refreshToken);
-                /* eslint-enable no-console */
+
+        async onResponseError({ response }) {
+            if (response.status === 401) {
+                await useFetch('/auth/refresh', {
+                    baseURL: config.public.api,
+                    method: 'POST',
+                    server: false,
+                    body: {
+                        refresh_token: refreshToken.value,
+                    },
+                    credentials: 'include',
+
+                    onResponse() {
+                        // store token
+                    },
+                });
             }
         },
     };
 
-    const params = defu(options, defaults);
+    const params = defu(requestOptions, defaults);
 
     return useFetch(url, params);
 }

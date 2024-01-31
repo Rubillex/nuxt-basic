@@ -7,8 +7,8 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/eslint-module',
         '@pinia/nuxt',
-        '@nuxt/image',
         '@pinia-plugin-persistedstate/nuxt',
+        '@nuxt/image',
         'frog-modal',
         'dayjs-nuxt',
         '@nuxtjs/google-fonts',
