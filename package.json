@@ -10,32 +10,33 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest",
-    "@nuxt/image": "^1.0.0",
+    "@nuxt/devtools": "^1.1.5",
+    "@nuxt/image": "^1.5.0",
     "@nuxtjs/eslint-config": "^12.0.0",
-    "@nuxtjs/google-fonts": "^3.0.2",
-    "@rushstack/eslint-patch": "^1.2.0",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@rushstack/eslint-patch": "^1.10.2",
     "@typescript-eslint/parser": "^5.62.0",
     "dayjs-nuxt": "^2.1.9",
-    "eslint": "^8.44.0",
-    "eslint-config-prettier": "^8.8.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "nuxt": "^3.8.0",
+    "nuxt": "^3.11.2",
     "prettier": "^2.8.8",
-    "sass": "^1.66.1"
+    "sass": "^1.75.0"
   },
   "dependencies": {
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/eslint-module": "^4.1.0",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "@pinia/nuxt": "^0.5.0",
-    "@typescript-eslint/eslint-plugin": "^5.9.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@vueuse/core": "^10.4.1",
-    "frog-modal": "^1.0.9",
-    "maska": "^2.1.10",
-    "pinia": "^2.1.6",
-    "pinia-plugin-persistedstate": "^3.2.0",
-    "vee-validate": "^4.11.3",
+    "frog-modal": "^1.0.12",
+    "maska": "^2.1.11",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "rubi-fetch": "^1.0.3",
+    "vee-validate": "^4.12.6",
     "vue-toastification": "^2.0.0-rc.5"
   }
 }
