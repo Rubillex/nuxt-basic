@@ -1,31 +1,67 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    devtools: { enabled: true },
-    build: {
-        transpile: ['vue-toastification'],
+    devtools: {
+        enabled: true,
+
+        timeline: {
+            enabled: true,
+        },
+    },
+    experimental: {
+        typedPages: true,
     },
     modules: [
         '@nuxtjs/eslint-module',
         '@pinia/nuxt',
-        '@pinia-plugin-persistedstate/nuxt',
         '@nuxt/image',
+        '@pinia-plugin-persistedstate/nuxt',
         'frog-modal',
-        'dayjs-nuxt',
         '@nuxtjs/google-fonts',
+        'nuxt-swiper',
+        '@nuxtjs/device',
+        'radix-vue/nuxt',
+        'dayjs-nuxt',
+        '@morev/vue-transitions/nuxt',
+        '@nuxtjs/stylelint-module',
     ],
+    device: {
+        refreshOnResize: true,
+    },
     piniaPersistedstate: {
-        storage: 'localStorage', // 'localStorage', 'sessionStorage' or 'cookies'
+        cookieOptions: {
+            sameSite: 'strict',
+        },
+        storage: 'localStorage',
     },
     runtimeConfig: {
         public: {
-            api: process.env.API_URL,
+            api: process.env.API_URL || '/api',
+            yandex_api_key: process.env.YANDEX_API_KEY || '',
         },
+    },
+    components: [
+        { path: '~/shared/ui', prefix: 'Ui', extensions: ['.vue'] },
+        { path: '~/shared/icons', prefix: 'Icon' },
+        { path: '~/widgets', prefix: 'Widget', extensions: ['.vue'] },
+        { path: '~/features', prefix: 'Feature', extensions: ['.vue'] },
+        { path: '~/entities', prefix: 'Entity', extensions: ['.vue'] },
+    ],
+    googleFonts: {
+        families: {
+            'Wix Madefor Text': [400, 500, 600, 700],
+            Raleway: [400, 500, 600, 700],
+            Lato: [400],
+            'Golos Text': [400, 500, 600, 700],
+        },
+    },
+    swiper: {
+        styleLang: 'scss',
     },
     vite: {
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: '@import "@/assets/styles/collection/index.scss";',
+                    additionalData: '@import "~/assets/styles/collection/index.scss";',
                 },
             },
         },
