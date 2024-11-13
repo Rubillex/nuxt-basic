@@ -1,0 +1,52 @@
+@use '../collection/colors' as *;
+
+html {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    &.no-scroll {
+        max-height: 100vh;
+        overflow: hidden;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
+
+.untouchable {
+    -webkit-touch-callout: none; /* iOS Safari */ /* Chrome/Safari/Opera */ /* Firefox */
+    user-select: none; /* Internet Explorer/Edge */
+}
+
+.container {
+    width: 100%;
+    max-width: 1368px;
+    margin: 0 auto;
+    padding: 0 72px;
+}
+
+.scrollable {
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $text-gray;
+        border-radius: 22px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: $bg-main;
+        border-radius: 22px;
+    }
+}

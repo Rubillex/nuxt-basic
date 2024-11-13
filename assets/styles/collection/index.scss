@@ -1,4 +1,4 @@
-@import "colors";
-@import "fonts";
-@import "functions";
-@import "mixins";
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'functions' as *;
+@use 'mixins' as *;

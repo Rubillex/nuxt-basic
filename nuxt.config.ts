@@ -2,14 +2,12 @@
 export default defineNuxtConfig({
     devtools: {
         enabled: true,
-
-        timeline: {
-            enabled: true,
-        },
     },
+
     experimental: {
         typedPages: true,
     },
+
     modules: [
         '@nuxtjs/eslint-module',
         '@pinia/nuxt',
@@ -20,28 +18,33 @@ export default defineNuxtConfig({
         '@nuxtjs/device',
         '@nuxtjs/stylelint-module',
     ],
+
     device: {
         refreshOnResize: true,
     },
+
     piniaPersistedstate: {
         cookieOptions: {
             sameSite: 'strict',
         },
         storage: 'localStorage',
     },
+
     runtimeConfig: {
         public: {
             api: process.env.API_URL || '/api',
             yandex_api_key: process.env.YANDEX_API_KEY || '',
         },
     },
+
     components: [
-        { path: '~/shared/ui', prefix: 'Ui', extensions: ['.vue'] },
-        { path: '~/shared/icons', prefix: 'Icon' },
+        { path: '~/common/ui', prefix: 'Ui', extensions: ['.vue'] },
+        { path: '~/common/icons', prefix: 'Icon' },
         { path: '~/widgets', prefix: 'Widget', extensions: ['.vue'] },
         { path: '~/features', prefix: 'Feature', extensions: ['.vue'] },
         { path: '~/entities', prefix: 'Entity', extensions: ['.vue'] },
     ],
+
     googleFonts: {
         families: {
             'Wix Madefor Text': [400, 500, 600, 700],
@@ -50,13 +53,18 @@ export default defineNuxtConfig({
             'Golos Text': [400, 500, 600, 700],
         },
     },
+
     vite: {
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: '@import "~/assets/styles/collection/index.scss";',
+                    additionalData: '@use "~/assets/styles/collection/index.scss";',
                 },
             },
         },
     },
+
+    compatibilityDate: '2024-11-06',
+
+    css: ['~/assets/styles/index.scss'],
 });
